@@ -1,12 +1,14 @@
-import { Route, Routes } from "react-router-dom";
-import Cadatro from "./pages/cadastro";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import Cadastro from "./pages/cadastro";
 
 const App = () => {
   return (
     <>
-      <Routes>
-        <Route path="/cadastro" element={<Cadatro />} />
-      </Routes>
+      <Router>
+        <Routes>
+          <Route path="/cadastro" element={<Cadastro />} />
+        </Routes>
+      </Router>
     </>
   );
 };
