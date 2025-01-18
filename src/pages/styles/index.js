@@ -31,6 +31,11 @@ export const FormS = styled.form`
   @media (max-width: 420px) {
     background-color: transparent;
     width: 100%;
+    placeholder-color: black;
+  }
+
+  label {
+    color: black;
   }
 
   input {
