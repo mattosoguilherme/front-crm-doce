@@ -26,9 +26,15 @@ export const FormS = styled.form`
   flex-direction: column;
   width: 25rem;
   padding: 2rem;
+  border-radius: 0 4rem 0 4rem;
+
+  @media (max-width: 420px) {
+    background-color: transparent;
+    width: 100%;
+  }
 
   input {
-  margin-bottom: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 
   select {
