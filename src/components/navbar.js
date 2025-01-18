@@ -63,7 +63,7 @@ const Header = () => {
 
                 <li className="nav-item">
                   <Link to={"/cliente"}  className="nav-link" href="#">
-                    Clientes
+                    clientes
                   </Link>
                 </li>
                 <li className="nav-item dropdown">
@@ -96,6 +96,12 @@ const Header = () => {
                       </a>
                     </li>
                   </ul>
+                </li>
+
+                <li className="nav-item">
+                  <Link to={"/"}  className="nav-link" href="#">
+                    sair
+                  </Link>
                 </li>
               </ul>
          
