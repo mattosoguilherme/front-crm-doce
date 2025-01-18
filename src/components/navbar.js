@@ -51,12 +51,12 @@ const Header = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <Link to={"/"} className="nav-link active" aria-current="page" href="#">
+                  <Link to={"/home"} className="nav-link active" aria-current="page" href="#">
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/cardarpio"}  className="nav-link" href="#">
+                  <Link to={"/cardapio"}  className="nav-link" href="#">
                     cardapio
                   </Link>
                 </li>

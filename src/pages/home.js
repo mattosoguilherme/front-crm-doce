@@ -9,6 +9,12 @@ const Home = () => {
         
     <ContainerS> 
             <Header/>
+
+
+
+            <p> mini dashboard</p>
+
+            
     </ContainerS>
         
         

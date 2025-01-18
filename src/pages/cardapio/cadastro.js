@@ -1,23 +1,18 @@
 import Header from "../../components/navbar";
-import ContainerS from  "../styles"
+import ContainerS from "../styles";
 
 const CadastroCardapio = () => {
+  return (
+    <>
+      
+      <ContainerS>
+        <Header />
 
+        <h1>Cadastro de Cardápio</h1>
 
-
-
-    return(
-
-        <> 
-            <h1>Cadastro de Cardápio</h1>
-<ContainerS> 
-<Header/>
-
-</ContainerS>
-          
-
-
-        </>
-    )
-}
+      
+      </ContainerS>
+    </>
+  );
+};
 export default CadastroCardapio;
