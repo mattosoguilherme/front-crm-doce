@@ -1,3 +1,4 @@
+import { Link, Navigate, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const NavS = styled.nav`
@@ -11,6 +12,8 @@ const NavS = styled.nav`
 `;
 
 const Header = () => {
+
+  const navigate = useNavigate();
   return (
     <>
       <NavS className="navbar bg-body-tertiary fixed-top">
@@ -36,7 +39,7 @@ const Header = () => {
           >
             <div className="offcanvas-header">
               <h5 className="offcanvas-title" id="offcanvasNavbarLabel">
-                Offcanvas
+                Docinhos Tia Lulu
               </h5>
               <button
                 type="button"
@@ -48,14 +51,20 @@ const Header = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <a className="nav-link active" aria-current="page" href="#">
+                  <Link to={"/"} className="nav-link active" aria-current="page" href="#">
                     Home
-                  </a>
+                  </Link>
                 </li>
                 <li className="nav-item">
-                  <a className="nav-link" href="#">
-                    Link
-                  </a>
+                  <Link to={"/cardarpio"}  className="nav-link" href="#">
+                    cardapio
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to={"/cliente"}  className="nav-link" href="#">
+                    Clientes
+                  </Link>
                 </li>
                 <li className="nav-item dropdown">
                   <a
@@ -65,7 +74,7 @@ const Header = () => {
                     data-bs-toggle="dropdown"
                     aria-expanded="false"
                   >
-                    Dropdown
+                    Configurações
                   </a>
                   <ul className="dropdown-menu">
                     <li>
@@ -89,17 +98,7 @@ const Header = () => {
                   </ul>
                 </li>
               </ul>
-              <form className="d-flex mt-3" role="search">
-                <input
-                  className="form-control me-2"
-                  type="search"
-                  placeholder="Search"
-                  aria-label="Search"
-                />
-                <button className="btn btn-outline-success" type="submit">
-                  Search
-                </button>
-              </form>
+         
             </div>
           </div>
         </div>

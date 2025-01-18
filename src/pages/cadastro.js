@@ -1,9 +1,11 @@
 import { useEffect } from "react";
 import Header from "../components/navbar";
-import ContainerS, { DivInfo, FormS, H1s } from "./styles";
+import { DivInfo, FormS, ContainerHomeS } from "./styles";
 import axios from "axios";
+import ReactInputMask from "react-input-mask";
+import { Link } from "react-router-dom";
 
-const Cadastro = () => {
+const CadastroCliente = () => {
   useEffect(() => {});
 
   const HandleSubmit = (e) => {
@@ -35,9 +37,7 @@ const Cadastro = () => {
 
   return (
     <>
-      <ContainerS>
-        <Header />
-
+      <ContainerHomeS>
         <DivInfo>
           <p>
             Se cadastrar na loja é super fácil e vale muito a pena! 🎉 Além de
@@ -48,8 +48,7 @@ const Cadastro = () => {
           </p>
 
           <FormS method="POST" onSubmit={HandleSubmit}>
-
-{/* Nome */}
+            {/* Nome */}
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -60,7 +59,7 @@ const Cadastro = () => {
               <label for="floatingInputNome">Nome Completo</label>
             </div>
 
-{/* Email */}
+            {/* Email */}
             <div className="form-floating mb-3">
               <input
                 type="email"
@@ -70,7 +69,7 @@ const Cadastro = () => {
               />
               <label for="floatingInputEmail">E-mail</label>
             </div>
-{/* Aniversário */}
+            {/* Aniversário */}
             <div className="form-floating mb-3">
               <input
                 type="date"
@@ -80,7 +79,7 @@ const Cadastro = () => {
               />
               <label for="floatingInputData">Aniversário</label>
             </div>
-{/* Matricula */}
+            {/* Matricula */}
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -90,7 +89,7 @@ const Cadastro = () => {
               />
               <label for="floatingInputMatricula">Marticula</label>
             </div>
-{/* Produto */}
+            {/* Produto */}
             <div className="form-floating">
               <select
                 className="form-select"
@@ -106,7 +105,7 @@ const Cadastro = () => {
                 Qual produto você trabalha?
               </label>
             </div>
-{/* Unidade */}
+            {/* Unidade */}
             <div className="form-floating">
               <select
                 className="form-select"
@@ -121,9 +120,10 @@ const Cadastro = () => {
                 Qual unidade você trabalha?
               </label>
             </div>
-{/* Contato */}
+            {/* Contato */}
             <div className="form-floating mb-3">
-              <input
+              <ReactInputMask
+                mask={"(99) 99999-9999"}
                 type="text"
                 className="form-control"
                 id="floatingInputContato"
@@ -135,11 +135,18 @@ const Cadastro = () => {
             <button className="btn btn-primary btn-lg" type="submit">
               Enviar
             </button>
+
+            <Link to={"/"}>
+              {" "}
+              <button type="button" class="btn btn-secondary">
+                Voltar
+              </button>{" "}
+            </Link>
           </FormS>
         </DivInfo>
-      </ContainerS>
+      </ContainerHomeS>
     </>
   );
 };
 
-export default Cadastro;
+export default CadastroCliente;

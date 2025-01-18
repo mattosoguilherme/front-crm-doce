@@ -9,27 +9,46 @@ const ContainerS = styled.main`
   height: 100vh;
   margin-right: auto;
   margin-left: auto;
-
   display: flex;
-
   background-color: #f2e5bd;
   flex-direction: column;
 
+
   @media (max-width: 420px) {
-    background-color: #f2508b;
+    background-color: #db496e;
     color: white;
-     height: 100%;
+    height: 100%;
   }
 `;
+export const ContainerHomeS = styled.main`
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  width: 100%;
+  height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  background-color: #f2e5bd;
+  justify-content: center;
+  align-items: center;
 
+  @media (max-width: 420px) {
+    background-color: #db496e;
+    color: white;
+    height: 130vh;
+  }
+`;
 export const FormS = styled.form`
-  background-color: #f2508b;
+  background-color: #db496e;
   display: flex;
   flex-direction: column;
   width: 25rem;
   padding: 2rem;
   border-radius: 0 4rem 0 4rem;
   align-self: center;
+  text-align: center;
 
   @media (max-width: 420px) {
     background-color: transparent;
@@ -42,11 +61,18 @@ export const FormS = styled.form`
   }
 
   input {
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
   }
 
   select {
     margin-bottom: 1.5rem;
+  }
+
+  button {
+  margin-bottom: 1rem;
   }
 `;
 
@@ -56,6 +82,9 @@ export const H1s = styled.h1`
 
 export const DivInfo = styled.div`
   display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
 
   @media (max-width: 420px) {
     flex-direction: column;
