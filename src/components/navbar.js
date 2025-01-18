@@ -2,8 +2,11 @@ import styled from "styled-components";
 
 const NavS = styled.nav`
   background-color: transparent !important;
+  position: relative !important;
+  
 
   .container-fluid {
+  justify-content: space-between !important;
   }
 `;
 
