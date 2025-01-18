@@ -1,10 +1,12 @@
-import { ContainerS, FormS } from "./styles";
+import Header from "../components/navbar";
+import ContainerS, { FormS, H1s } from "./styles";
 
 const Cadastro = () => {
   return (
     <>
+      <Header />
       <ContainerS>
-        <h1>Cadastro</h1>
+        <H1s>Cadastro5</H1s>
 
         <FormS>
           <div className="form-floating mb-3">

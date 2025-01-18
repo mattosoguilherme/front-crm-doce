@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ContainerS = styled.main`
+ const ContainerS = styled.main`
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
   padding-right: calc(var(--bs-gutter-x) * 0.5);
@@ -27,6 +27,7 @@ export const FormS = styled.form`
   width: 25rem;
   padding: 2rem;
   border-radius: 0 4rem 0 4rem;
+  margim: 2rem 
 
   @media (max-width: 420px) {
     background-color: transparent;
@@ -46,3 +47,8 @@ export const FormS = styled.form`
     margin-bottom: 1.5rem;
   }
 `;
+
+export const H1s = styled.h1` 
+
+`
+export default ContainerS;
