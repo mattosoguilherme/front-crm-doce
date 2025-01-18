@@ -7,21 +7,30 @@ const Cadastro = () => {
   useEffect(() => {});
 
   const HandleSubmit = (e) => {
+    e.preventDefault();
+
     const cadastroCliente = {
-      email: e.targert.floatingInputEmail.value,
-      nome: e.targert.floatingInputNome.value,
-      contato: e.targert.contato.value,
-      produto: e.targert.floatingSelectProduto.value,
-      equipe: e.targert.equipe.value,
-      unidade: e.targert.floatingSelectUnidade.value,
-      matricula: e.targert.floatingInputMatricula.value,
-      aniversario: e.targert.floatingInputData.value,
+      email: e.target.floatingInputEmail.value,
+      nome: e.target.floatingInputNome.value,
+      contato: e.target.floatingInputContato.value,
+      produto: e.target.floatingSelectProduto.value,
+      unidade: e.target.floatingSelectUnidade.value,
+      matricula: e.target.floatingInputMatricula.value,
+      aniversario: e.target.floatingInputData.value,
     };
 
     console.log(cadastroCliente);
 
     axios
-    .post("/user")
+      .post("/user", cadastroCliente)
+      .then((res) => {
+        console.log(res);
+        console.log(cadastroCliente);
+        alert("Cadastro realizado com sucesso!");
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+      });
   };
 
   return (
@@ -39,6 +48,8 @@ const Cadastro = () => {
           </p>
 
           <FormS method="POST" onSubmit={HandleSubmit}>
+
+{/* Nome */}
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -49,6 +60,7 @@ const Cadastro = () => {
               <label for="floatingInputNome">Nome Completo</label>
             </div>
 
+{/* Email */}
             <div className="form-floating mb-3">
               <input
                 type="email"
@@ -58,7 +70,7 @@ const Cadastro = () => {
               />
               <label for="floatingInputEmail">E-mail</label>
             </div>
-
+{/* Aniversário */}
             <div className="form-floating mb-3">
               <input
                 type="date"
@@ -68,7 +80,7 @@ const Cadastro = () => {
               />
               <label for="floatingInputData">Aniversário</label>
             </div>
-
+{/* Matricula */}
             <div className="form-floating mb-3">
               <input
                 type="text"
@@ -78,7 +90,7 @@ const Cadastro = () => {
               />
               <label for="floatingInputMatricula">Marticula</label>
             </div>
-
+{/* Produto */}
             <div className="form-floating">
               <select
                 className="form-select"
@@ -94,7 +106,7 @@ const Cadastro = () => {
                 Qual produto você trabalha?
               </label>
             </div>
-
+{/* Unidade */}
             <div className="form-floating">
               <select
                 className="form-select"
@@ -109,7 +121,7 @@ const Cadastro = () => {
                 Qual unidade você trabalha?
               </label>
             </div>
-
+{/* Contato */}
             <div className="form-floating mb-3">
               <input
                 type="text"
