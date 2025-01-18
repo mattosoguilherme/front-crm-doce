@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import Header from "../components/navbar";
-import { DivInfo, FormS, ContainerHomeS } from "./styles";
+import { DivInfo, FormS, ContainerCadS } from "./styles";
 import axios from "axios";
 import ReactInputMask from "react-input-mask";
 import { Link } from "react-router-dom";
@@ -37,7 +37,7 @@ const CadastroCliente = () => {
 
   return (
     <>
-      <ContainerHomeS>
+      <ContainerCadS>
         <DivInfo>
           <p>
             Se cadastrar na loja é super fácil e vale muito a pena! 🎉 Além de
@@ -144,7 +144,7 @@ const CadastroCliente = () => {
             </Link>
           </FormS>
         </DivInfo>
-      </ContainerHomeS>
+      </ContainerCadS>
     </>
   );
 };

@@ -33,13 +33,46 @@ export const ContainerHomeS = styled.main`
   background-color: #f2e5bd;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
+
+  @media (max-width: 420px) {
+    background-color: #db496e;
+    color: white;
+    height: 100vh;
+  }
+
+  .logo{
+  margin-bottom: 2rem;
+  }
+`; 
+
+export const ContainerCadS = styled.main`
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  width: 100%;
+  height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  background-color: #f2e5bd;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 
   @media (max-width: 420px) {
     background-color: #db496e;
     color: white;
     height: 130vh;
   }
-`;
+
+  .logo{
+  margin-bottom: 2rem;
+  }
+`; 
+
+
 export const FormS = styled.form`
   background-color: #db496e;
   display: flex;
