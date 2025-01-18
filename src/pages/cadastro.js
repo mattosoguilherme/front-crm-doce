@@ -6,7 +6,7 @@ const Cadastro = () => {
     <>
       <Header />
       <ContainerS>
-        <H1s>Cadastro5</H1s>
+        <H1s>Cadastro</H1s>
 
         <FormS>
           <div className="form-floating mb-3">
@@ -92,6 +92,7 @@ const Cadastro = () => {
             Enviar
           </button>
         </FormS>
+        
       </ContainerS>
     </>
   );

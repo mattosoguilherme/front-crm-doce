@@ -1,7 +1,11 @@
 import styled from "styled-components";
 
-const NavS = styled.nav``
+const NavS = styled.nav`
+  background-color: transparent !important;
 
+  .container-fluid {
+  }
+`;
 
 const Header = () => {
   return (
@@ -9,7 +13,7 @@ const Header = () => {
       <NavS className="navbar bg-body-tertiary fixed-top">
         <div className="container-fluid">
           <a className="navbar-brand" href="#">
-            Offcanvas navbar
+            <img src="https://i.ibb.co/gVnmYDf/logo.jpg" width={50} />
           </a>
           <button
             className="navbar-toggler"

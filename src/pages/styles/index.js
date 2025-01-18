@@ -9,6 +9,7 @@ import styled from "styled-components";
   height: 100vh;
   margin-right: auto;
   margin-left: auto;
+  margin-top: 5rem;
   display: flex;
   align-items: center;
   background-color: #f2e5bd;
@@ -27,7 +28,6 @@ export const FormS = styled.form`
   width: 25rem;
   padding: 2rem;
   border-radius: 0 4rem 0 4rem;
-  margim: 2rem 
 
   @media (max-width: 420px) {
     background-color: transparent;
