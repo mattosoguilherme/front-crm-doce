@@ -4,15 +4,13 @@ import styled from "styled-components";
 const NavS = styled.nav`
   background-color: transparent !important;
   position: relative !important;
-  
 
   .container-fluid {
-  justify-content: space-between !important;
+    justify-content: space-between !important;
   }
 `;
 
 const Header = () => {
-
   const navigate = useNavigate();
   return (
     <>
@@ -51,18 +49,29 @@ const Header = () => {
             <div className="offcanvas-body">
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
-                  <Link to={"/home"} className="nav-link active" aria-current="page" href="#">
+                  <Link
+                    to={"/home"}
+                    className="nav-link active"
+                    aria-current="page"
+                    href="#"
+                  >
                     Home
                   </Link>
                 </li>
                 <li className="nav-item">
-                  <Link to={"/cardapio"}  className="nav-link" href="#">
+                  <Link to={"/cardapio"} className="nav-link" href="#">
                     cardapio
                   </Link>
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/cliente"}  className="nav-link" href="#">
+                  <Link to={"/pedido"} className="nav-link" href="#">
+                    Pedidos
+                  </Link>
+                </li>
+
+                <li className="nav-item">
+                  <Link to={"/cliente"} className="nav-link" href="#">
                     clientes
                   </Link>
                 </li>
@@ -99,12 +108,11 @@ const Header = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/"}  className="nav-link" href="#">
+                  <Link to={"/"} className="nav-link" href="#">
                     sair
                   </Link>
                 </li>
               </ul>
-         
             </div>
           </div>
         </div>

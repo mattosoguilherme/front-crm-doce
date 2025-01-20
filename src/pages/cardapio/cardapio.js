@@ -8,8 +8,10 @@ const Cardapio = () => {
       <ContainerS>
         <Header />
 
-        <Link to="/cadastro/cardapio">
-          <button>Adicionar Item</button>
+        <Link to="/cardapio/cadastro">
+          <button className="btn btn-primary " type="button">
+            Adicionar Item
+          </button>
         </Link>
         <p> lista cardarpio</p>
       </ContainerS>

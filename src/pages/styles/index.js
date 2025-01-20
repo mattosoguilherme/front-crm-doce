@@ -20,6 +20,8 @@ const ContainerS = styled.main`
     height: 100%;
   }
 `;
+
+
 export const ContainerHomeS = styled.main`
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -45,6 +47,46 @@ export const ContainerHomeS = styled.main`
   margin-bottom: 2rem;
   }
 `; 
+
+
+
+export const ContainerCadstroS = styled.main`
+  --bs-gutter-x: 1.5rem;
+  --bs-gutter-y: 0;
+  padding-right: calc(var(--bs-gutter-x) * 0.5);
+  padding-left: calc(var(--bs-gutter-x) * 0.5);
+  width: 100%;
+  height: 100vh;
+  margin-right: auto;
+  margin-left: auto;
+  display: flex;
+  background-color: #f2e5bd;
+  flex-direction: column;
+
+  @media (max-width: 420px) {
+    background-color: #db496e;
+    color: white;
+    height: 130vh;
+  }
+
+  .logo{
+  margin-bottom: 2rem;
+  }
+`; 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 export const ContainerCadS = styled.main`
   --bs-gutter-x: 1.5rem;
@@ -93,7 +135,7 @@ export const FormS = styled.form`
     color: black;
   }
 
-  input {
+  input, textarea {
     margin-bottom: 0.8rem;
     border: none;
     border-radius: 0.5rem;

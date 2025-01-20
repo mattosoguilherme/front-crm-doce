@@ -55,6 +55,7 @@ const CadastroCliente = () => {
                 className="form-control"
                 id="floatingInputNome"
                 placeholder="Nome Completo"
+                required
               />
               <label for="floatingInputNome">Nome Completo</label>
             </div>
@@ -66,6 +67,7 @@ const CadastroCliente = () => {
                 className="form-control"
                 id="floatingInputEmail"
                 placeholder="name@example.com"
+                required
               />
               <label for="floatingInputEmail">E-mail</label>
             </div>
@@ -76,6 +78,7 @@ const CadastroCliente = () => {
                 className="form-control"
                 id="floatingInputData"
                 placeholder="matricula"
+                required
               />
               <label for="floatingInputData">Aniversário</label>
             </div>
@@ -95,6 +98,7 @@ const CadastroCliente = () => {
                 className="form-select"
                 id="floatingSelectProduto"
                 aria-label="Floating label select example"
+                required
               >
                 <option selected>*Escolha o pruduto</option>
                 <option value="Alelo">Alelo</option>
@@ -111,6 +115,7 @@ const CadastroCliente = () => {
                 className="form-select"
                 id="floatingSelectUnidade"
                 aria-label="Floating label select example"
+                required
               >
                 <option selected>*Escolha a unidade</option>
                 <option value="mogi-II">Mogi II - Cesar de Souza</option>
@@ -128,6 +133,7 @@ const CadastroCliente = () => {
                 className="form-control"
                 id="floatingInputContato"
                 placeholder="Contato"
+                required
               />
               <label for="floatingInputContato">Whatsapp</label>
             </div>
