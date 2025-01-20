@@ -11,7 +11,7 @@ const RegistroPedido = () => {
         <H1s>Registro de Pedido</H1s>
 
         <FormS>
-          <Link to={"/pedido"}>
+          <Link to={"/cliente"}>
             <button className="btn btn-secondary">Voltar</button>
           </Link>
         </FormS>
