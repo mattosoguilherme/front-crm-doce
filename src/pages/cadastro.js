@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import Header from "../components/navbar";
 import { DivInfo, FormS, ContainerCadS } from "./styles";
 import axios from "axios";
 import ReactInputMask from "react-input-mask";
@@ -19,6 +18,8 @@ const CadastroCliente = () => {
       unidade: e.target.floatingSelectUnidade.value,
       matricula: e.target.floatingInputMatricula.value,
       aniversario: e.target.floatingInputData.value,
+      password: e.target.floatingInputPassword.value,
+      confirmPassword: e.target.floatingInputPasswordC.value,
     };
 
     console.log(cadastroCliente);
@@ -32,6 +33,7 @@ const CadastroCliente = () => {
       })
       .catch((err) => {
         console.log(err.response.data.message);
+        alert(err.response.data.message);
       });
   };
 
@@ -89,6 +91,7 @@ const CadastroCliente = () => {
                 className="form-control"
                 id="floatingInputMatricula"
                 placeholder="matricula"
+                required
               />
               <label for="floatingInputMatricula">Marticula</label>
             </div>
@@ -138,16 +141,39 @@ const CadastroCliente = () => {
               <label for="floatingInputContato">Whatsapp</label>
             </div>
 
+            <div className="form-floating mb-3">
+              <input
+                type="password"
+                className="form-control"
+                id="floatingInputPassword"
+                placeholder="matricula"
+                required
+              />
+              <label for="floatingInputPassword">Senha</label>
+            </div>
+
+            <div className="form-floating mb-3">
+              <input
+                type="password"
+                className="form-control"
+                id="floatingInputPasswordC"
+                placeholder="password"
+                required
+              />
+              <label for="floatingInputPasswordC">Confirmação de senha</label>
+            </div>
+
             <button className="btn btn-primary btn-lg" type="submit">
               Enviar
             </button>
 
-            <Link to={"/"}>
+            {/* <Link to={"/"}>
               {" "}
               <button type="button" class="btn btn-secondary">
                 Voltar
               </button>{" "}
-            </Link>
+            </Link> */}
+            
           </FormS>
         </DivInfo>
       </ContainerCadS>
