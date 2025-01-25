@@ -13,14 +13,12 @@ const ContainerS = styled.main`
   background-color: #f2e5bd;
   flex-direction: column;
 
-
   @media (max-width: 420px) {
     background-color: #db496e;
     color: white;
     height: 100%;
   }
 `;
-
 
 export const ContainerHomeS = styled.main`
   --bs-gutter-x: 1.5rem;
@@ -43,12 +41,10 @@ export const ContainerHomeS = styled.main`
     height: 100vh;
   }
 
-  .logo{
-  margin-bottom: 2rem;
+  .logo {
+    margin-bottom: 2rem;
   }
-`; 
-
-
+`;
 
 export const ContainerCadstroS = styled.main`
   --bs-gutter-x: 1.5rem;
@@ -69,24 +65,10 @@ export const ContainerCadstroS = styled.main`
     height: 130vh;
   }
 
-  .logo{
-  margin-bottom: 2rem;
+  .logo {
+    margin-bottom: 2rem;
   }
-`; 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+`;
 
 export const ContainerCadS = styled.main`
   --bs-gutter-x: 1.5rem;
@@ -103,17 +85,16 @@ export const ContainerCadS = styled.main`
   align-items: center;
   flex-direction: column;
 
-  @media (max-width: 420px) {
+  @media (max-width: 430px) {
     background-color: #db496e;
     color: white;
-    height: 130vh;
+    height: 100%;
   }
 
-  .logo{
-  margin-bottom: 2rem;
+  .logo {
+    margin-bottom: 2rem;
   }
-`; 
-
+`;
 
 export const FormS = styled.form`
   background-color: #db496e;
@@ -135,7 +116,8 @@ export const FormS = styled.form`
     color: black;
   }
 
-  input, textarea {
+  input,
+  textarea {
     margin-bottom: 0.8rem;
     border: none;
     border-radius: 0.5rem;
@@ -147,7 +129,7 @@ export const FormS = styled.form`
   }
 
   button {
-  margin-bottom: 1rem;
+    margin-bottom: 1rem;
   }
 `;
 
@@ -170,6 +152,7 @@ export const DivInfo = styled.div`
   p {
     align-self: center;
     margin-right: 3rem;
+    margin-top: 3rem;
     width: 38rem;
     text-align: center;
     background-color: #f29bab;
