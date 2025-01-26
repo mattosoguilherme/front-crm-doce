@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/navbar";
-import ContainerS, { ListCardapio } from "../styles";
+import ContainerS, { ListCardapio, ListS } from "../styles";
 import CardCardapio from "../../components/card/itemCardapio";
 import { useEffect, useState } from "react";
 import axios from "axios";
@@ -35,11 +35,11 @@ const Cardapio = () => {
         </Link>
 
         {loading ? (
-          <ListCardapio>
+          <ListS>
             {cardapio.map((item) => (
               <CardCardapio data={item} key={item.id} />
             ))}
-          </ListCardapio>
+          </ListS>
         ) : (
           <>
             <Loading />

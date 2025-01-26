@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { CardCardapioS } from "../../pages/styles";
+import { CardCardapioS, CardS } from "../../pages/styles";
 import axios from "axios";
 
 const CardCardapio = (props) => {
@@ -18,7 +18,7 @@ const CardCardapio = (props) => {
   };
 
   return (
-    <CardCardapioS className="card">
+    <CardS className="card">
       <Link to={`/cardapio/cadastro/${item.id}`}>
         <button className="btn-edit">
           <i className="bi bi-pencil-square"></i>
@@ -51,7 +51,7 @@ const CardCardapio = (props) => {
           </form>
         </div>
       </div>
-    </CardCardapioS>
+    </CardS>
   );
 };
 export default CardCardapio;

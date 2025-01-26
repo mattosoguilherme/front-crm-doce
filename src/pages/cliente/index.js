@@ -1,37 +1,58 @@
-import ContainerS, { H1s } from "../styles";
+import ContainerS, { H1s, ListS } from "../styles";
 import Header from "../../components/navbar";
 import { Link } from "react-router-dom";
+import { useEffect, useState } from "react";
+import Loading from "../../components/loading";
+import axios from "axios";
+import CardCliente from "../../components/card/cliente";
 
 const Cliente = () => {
+  const [clientes, setClientes] = useState([]);
+  const [loading, setLoading] = useState(false);
 
+  useEffect(() => {
+    axios
+      .get("/user")
+      .then((response) => {
+        
+        setClientes(response.data);
+        setLoading(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, []);
 
-  
   return (
     <>
       <ContainerS>
         <Header />
 
-        <H1s>Lista de Clientes</H1s>
+        <H1s> Clientes</H1s>
 
-        <div className="card" style={{ width: "18rem" }}>
-          <img
-            width={30}
-            src="https://i.ibb.co/zGGYwwm/adicionar-usuario.png"
-            className="card-img-top"
-            alt="..."
-          />
-          <div className="card-body">
-            <h5 className="card-title">nome cliente</h5>
-            <h5>produto </h5>
-            <h5>unidade </h5>
+        {loading ? (
+          <> 
+          <ListS> 
 
-            <Link to="/pedido/registro">
-              <button className="btn btn-primary " type="button">
-                NOVO PEDIDO
-              </button>
-            </Link>
-          </div>
-        </div>
+
+            {clientes.map((cliente) => ( 
+              <> 
+              
+              
+              <CardCliente data={cliente} key={cliente.id} />
+              
+              </>
+            ))}
+          </ListS>
+          
+          
+          
+          </>
+        ) : (
+          <>
+            <Loading />
+          </>
+        )}
 
         <p> lembra de fazer a logica de busca do video </p>
 

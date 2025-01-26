@@ -186,7 +186,7 @@ export const DivInfo = styled.div`
   }
 `;
 
-export const ListCardapio = styled.div`
+export const ListS = styled.div`
   display: flex;
   justify-content: center;
   justify-content: space-evenly;
@@ -197,14 +197,14 @@ export const ListCardapio = styled.div`
   }
 `;
 
-export const CardCardapioS = styled.div`
+export const CardS = styled.div`
   margin: 1rem !important ;
-  width: 18rem;
+  width: 14rem;
   background-color: #f29bab;
 
   @media (max-width: 420px) {
     margim: 1rem !important ;
-    width: 8rem;
+    width: 10rem;
     font-size: 0.5rem;
   }
 
@@ -225,6 +225,7 @@ export const CardCardapioS = styled.div`
   justify-content:center;
   align-items:center;
   position:absolute;
+  border-radius:5px;
 
   }
 `;
