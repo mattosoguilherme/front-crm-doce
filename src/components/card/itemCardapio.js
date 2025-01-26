@@ -1,9 +1,16 @@
+import { Link } from "react-router-dom";
 import { CardCardapioS } from "../../pages/styles";
 
 const CardCardapio = () => {
   const handleCeck = () => {};
   return (
     <CardCardapioS className="card">
+      <Link to="/cardapio/cadastro/:id">
+        <button className="btn-edit">
+          <i className="bi bi-pencil-square"></i>
+        </button>
+      </Link>
+
       <img
         src="https://static.vecteezy.com/ti/vetor-gratis/p1/15218223-de-contorno-de-icone-de-cupcake-de-creme-liquido-doce-vetor.jpg"
         className="card-img-top"
@@ -25,9 +32,6 @@ const CardCardapio = () => {
             for="flexSwitchCheckDefault"
           ></label>
         </div>
-
-        <i className="bi bi-pencil-square"></i>
-        <i className="fi fi-bs-edit"></i>
       </div>
     </CardCardapioS>
   );

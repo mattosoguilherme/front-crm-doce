@@ -218,6 +218,18 @@ export const CardCardapioS = styled.div`
   img {
     width: 100%;
   }
+
+  .btn-edit {
+  background-color:none;
+  border:none;
+  padding:0;
+  width:1.2rem;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  position:absolute;
+
+  }
 `;
 
 export default ContainerS;

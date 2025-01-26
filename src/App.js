@@ -7,6 +7,7 @@ import Cardapio from "./pages/cardapio/cardapio";
 import Pedidos from "./pages/pedido";
 import RegistroPedido from "./pages/pedido/registro";
 import Cliente from "./pages/cliente";
+import EditCardapio from "./pages/cardapio/edit";
 
 const App = () => {
   return (
@@ -18,6 +19,7 @@ const App = () => {
           <Route path="/home" element={<Home />} />
           <Route path="/cardapio" element={<Cardapio />} />
           <Route path="/cardapio/cadastro" element={<CadastroCardapio />} />
+          <Route path="/cardapio/cadastro/:id" element={<EditCardapio />} />
           <Route path="/pedido" element={<Pedidos />} />
           <Route path="/pedido/registro" element={<RegistroPedido />} />
           <Route path="/cliente" element={<Cliente />} />
