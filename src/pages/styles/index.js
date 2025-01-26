@@ -205,7 +205,7 @@ export const CardS = styled.div`
   @media (max-width: 420px) {
     margim: 1rem !important ;
     width: 10rem;
-    font-size: 0.5rem;
+    font-size: 0.3rem;
   }
 
   .card-body {
