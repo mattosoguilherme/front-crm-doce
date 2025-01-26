@@ -3,7 +3,7 @@ import CadastroCliente from "./pages/cadastro";
 import CadastroCardapio from "./pages/cardapio/cadastro";
 import Login from "./pages/login";
 import Home from "./pages/home";
-import Cardapio from "./pages/cardapio/cardapio";
+import Cardapio from "./pages/cardapio/index";
 import Pedidos from "./pages/pedido";
 import RegistroPedido from "./pages/pedido/registro";
 import Cliente from "./pages/cliente";

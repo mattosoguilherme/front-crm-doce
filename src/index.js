@@ -6,7 +6,7 @@ import axios from 'axios';
 import GlobalStyle from './global.style';
 
 
-axios.defaults.baseURL = 'https://crm-doce.onrender.com/';
+axios.defaults.baseURL = 'http://localhost:3080';
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

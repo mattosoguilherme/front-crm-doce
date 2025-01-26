@@ -1,5 +1,4 @@
 import styled from "styled-components";
-import CardCardapio from "../../components/card/itemCardapio";
 
 const ContainerS = styled.main`
   --bs-gutter-x: 1.5rem;
@@ -7,7 +6,7 @@ const ContainerS = styled.main`
   padding-right: calc(var(--bs-gutter-x) * 0.5);
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   width: 100%;
-  height: 100vh;
+  height: 100%;
   margin-right: auto;
   margin-left: auto;
   display: flex;
@@ -18,8 +17,6 @@ const ContainerS = styled.main`
     background-color: #db496e;
     color: white;
     height: 100%;
-
-
   }
 
   .form-check {

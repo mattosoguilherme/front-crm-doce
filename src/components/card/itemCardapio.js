@@ -1,36 +1,54 @@
 import { Link } from "react-router-dom";
 import { CardCardapioS } from "../../pages/styles";
+import axios from "axios";
 
-const CardCardapio = () => {
-  const handleCeck = () => {};
+const CardCardapio = (props) => {
+  const item = props.data;
+
+  const handleCkeck = (boolean) => {
+    axios
+      .patch(`/cardapio/${item.id}`, { "active": boolean })
+      .then((res) => {
+        alert("ALTERAÇÃO REALIZADA COM SUCESSO");
+      })
+      .catch((err) => {
+        console.log(err);
+        alert("ERRO AO REALIZAR ALTERAÇÃO");
+      });
+  };
+
   return (
     <CardCardapioS className="card">
-      <Link to="/cardapio/cadastro/:id">
+      <Link to={`/cardapio/cadastro/${item.id}`}>
         <button className="btn-edit">
           <i className="bi bi-pencil-square"></i>
         </button>
       </Link>
 
-      <img
-        src="https://static.vecteezy.com/ti/vetor-gratis/p1/15218223-de-contorno-de-icone-de-cupcake-de-creme-liquido-doce-vetor.jpg"
-        className="card-img-top"
-        alt="..."
-      />
+      <img src={item.urlFoto} className="card-img-top" alt="..." />
       <div className="card-body">
-        <h6 className="card-title">surpresa de uva</h6>
-        <p className="card-text">Descrição do Produto</p>
-        <p className="card-text preco">R$ 00,00</p>
-        <div className="form-check form-switch">
-          <input
-            className="form-check-input"
-            type="checkbox"
-            role="switch"
-            id="flexSwitchCheckDefault"
-          />
-          <label
-            className="form-check-label"
-            for="flexSwitchCheckDefault"
-          ></label>
+        <h6 className="card-title">{item.titulo}</h6>
+        <p className="card-text">{item.descricao}</p>
+        <p className="card-text preco">R$ {item.preco}</p>
+
+        <div className="card-footer">
+          <form method="POST" onSubmit={handleCkeck}>
+            {" "}
+            <div className="form-check form-switch">
+              <input
+                className="form-check-input"
+                type="checkbox"
+                role="switch"
+                id="flexSwitchCheckDefault"
+                defaultChecked={item.active}
+                onChange={(e) => handleCkeck(e.target.checked)}
+              />
+              <label
+                className="form-check-label"
+                for="flexSwitchCheckDefault"
+              ></label>
+            </div>
+          </form>
         </div>
       </div>
     </CardCardapioS>

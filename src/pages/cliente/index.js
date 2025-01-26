@@ -3,6 +3,9 @@ import Header from "../../components/navbar";
 import { Link } from "react-router-dom";
 
 const Cliente = () => {
+
+
+  
   return (
     <>
       <ContainerS>
