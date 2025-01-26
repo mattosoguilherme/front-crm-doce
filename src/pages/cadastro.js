@@ -2,7 +2,7 @@ import { useEffect } from "react";
 import { DivInfo, FormS, ContainerCadS } from "./styles";
 import axios from "axios";
 import ReactInputMask from "react-input-mask";
-import { Link } from "react-router-dom";
+
 
 const CadastroCliente = () => {
   useEffect(() => {});
@@ -27,8 +27,7 @@ const CadastroCliente = () => {
     axios
       .post("/user", cadastroCliente)
       .then((res) => {
-        console.log(res);
-        console.log(cadastroCliente);
+  
         alert("Cadastro realizado com sucesso!");
       })
       .catch((err) => {

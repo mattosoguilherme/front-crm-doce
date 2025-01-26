@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import Header from "../../components/navbar";
-import ContainerS from "../styles";
+import ContainerS, { ListCardapio } from "../styles";
+import CardCardapio from "../../components/card/itemCardapio";
 
 const Cardapio = () => {
   return (
@@ -13,7 +14,16 @@ const Cardapio = () => {
             Adicionar Item
           </button>
         </Link>
-        <p> lista cardarpio</p>
+   
+
+        <ListCardapio>
+
+          <CardCardapio />
+          <CardCardapio />
+          <CardCardapio />
+
+        </ListCardapio>
+
       </ContainerS>
     </>
   );

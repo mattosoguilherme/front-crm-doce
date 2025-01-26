@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import CardCardapio from "../../components/card/itemCardapio";
 
 const ContainerS = styled.main`
   --bs-gutter-x: 1.5rem;
@@ -17,7 +18,25 @@ const ContainerS = styled.main`
     background-color: #db496e;
     color: white;
     height: 100%;
+
+
   }
+
+  .form-check {
+    margim: 0;
+    background-color: back !important;
+    width: 100%;
+  }
+
+  input {
+    width:2.5rem!important;
+    height:1.5rem!important;
+  }
+
+  .preco {
+  font-size: 1rem;
+  }
+
 `;
 
 export const ContainerHomeS = styled.main`
@@ -169,4 +188,36 @@ export const DivInfo = styled.div`
     }
   }
 `;
+
+export const ListCardapio = styled.div`
+  display: flex;
+  justify-content: center;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+
+  @media (max-width: 420px) {
+    width: 100%;
+  }
+`;
+
+export const CardCardapioS = styled.div`
+  margin: 1rem !important ;
+  width: 18rem;
+  background-color: #f29bab;
+
+  @media (max-width: 420px) {
+    margim: 1rem !important ;
+    width: 8rem;
+    font-size: 0.5rem;
+  }
+
+  .card-body {
+    padding: 0.5rem !important;
+  }
+
+  img {
+    width: 100%;
+  }
+`;
+
 export default ContainerS;

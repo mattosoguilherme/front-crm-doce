@@ -1,9 +1,33 @@
 import ReactInputMask from "react-input-mask";
 import Header from "../../components/navbar";
-import  { ContainerCadstroS, FormS, H1s } from "../styles";
+import axios from "axios";
+import { ContainerCadstroS, FormS, H1s } from "../styles";
 import { Link } from "react-router-dom";
 
 const CadastroCardapio = () => {
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    const itemCardapio = {
+      urlFoto: e.target.floatingInputURLFoto.value,
+      titulo: e.target.floatingInputTitulo.value,
+      preco: Number(e.target.floatingInputPreco.value),
+      descricao: e.target.floatingTextareaDescricao.value,
+    };
+
+    axios
+      .post("/cardapio", itemCardapio)
+      .then((res) => {
+        console.log(res);
+        console.log(itemCardapio);
+        alert("Cadastro realizado com sucesso!");
+      })
+      .catch((err) => {
+        console.log(err.response.data.message);
+        alert(err.response.data.message);
+      });
+  };
+
   return (
     <>
       <ContainerCadstroS>
@@ -11,7 +35,7 @@ const CadastroCardapio = () => {
 
         <H1s>Registro de Item</H1s>
 
-        <FormS>
+        <FormS method="POST" onSubmit={handleSubmit}>
           {/* url foto */}
           <div className="form-floating mb-3">
             <input
@@ -37,8 +61,8 @@ const CadastroCardapio = () => {
           {/* preço*/}
           <div className="form-floating mb-3">
             <ReactInputMask
-              mask={"99,99"}
-              type="text "
+              mask={"99.99"}
+              type="text"
               className="form-control"
               id="floatingInputPreco"
               placeholder="R$ 0,00"
@@ -61,10 +85,8 @@ const CadastroCardapio = () => {
             Cadastrar
           </button>
 
-          <Link to={"/cardapio"} >   
-          
-          <buttton className="btn btn-secondary" > Voltar </buttton>
-
+          <Link to={"/cardapio"}>
+            <buttton className="btn btn-secondary"> Voltar </buttton>
           </Link>
         </FormS>
       </ContainerCadstroS>
