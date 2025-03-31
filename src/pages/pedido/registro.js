@@ -36,7 +36,7 @@ const RegistroPedido = () => {
 
   const nextStep = (e) => {
     e.preventDefault();
-     setTotal(
+    setTotal(
       itensSelecionados.reduce((acc, i) => acc + i.preco * i.quantidade, 0)
     );
     setStep(2);
@@ -59,7 +59,7 @@ const RegistroPedido = () => {
         return prev.filter((i) => i.id !== item.id);
       }
 
-      console.log(prev)
+      console.log(prev);
 
       return prev;
     });
@@ -73,8 +73,6 @@ const RegistroPedido = () => {
           : i
       );
     });
-
-   
   };
 
   const handleSubimit = (e) => {
@@ -82,17 +80,24 @@ const RegistroPedido = () => {
 
     const pedido = {
       user_id: id,
-      items_id: itensSelecionados,
+      itens_id: itensSelecionados,
       status: e.target.floatingSelectStatusPedido.value,
       metodo_pagamento: e.target.floatingSelectMetodo.value,
-      total: e.target.floatingInputPreco.value,
+      total: Number(e.target.floatingInputPreco.value),
     };
     console.log(pedido);
 
-    
+    axios
+      .post("/pedido", pedido)
+      .then((res) => {
+        alert("Pedido realizado com sucesso");
+      })
+      .catch((err) => {
+        console.error("ops! ocorreu um erro" + err);
+        alert("Erro ao realizar o pedido");
+        console.log(err);
+      });
   };
-
- 
 
   return (
     <>

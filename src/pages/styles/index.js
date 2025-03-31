@@ -356,4 +356,36 @@ export const DivInputBuscaS = styled.div`
   }
 `;
 
+export const DivFormSearchS = styled.div` 
+width: 100%;
+background-color:rgb(252, 132, 198);
+padding: 0.9rem;
+border-radius: 0.8rem;
+display: flex;
+justify-content: space-evenly;
+margin-bottom: 2rem;
+
+form{
+
+display: flex;
+justify-content:space-evenly;
+width: 100%;
+}
+form div{
+display: flex;
+flex-direction: column;
+justify-content: center;
+}
+
+form div input,select{
+width: 100%;
+height: 2.2rem;
+padding: 0.5rem;
+border-radius: 0.3rem;
+border: none;
+
+}
+
+`;
+
 export default ContainerS;
