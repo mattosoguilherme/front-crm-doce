@@ -1,7 +1,6 @@
 import { Link, useParams } from "react-router-dom";
 import Header from "../../components/navbar";
 import { CardItemPedidoS, ContainerCadstroS, FormS, H1s } from "../styles";
-import ReactInputMask from "react-input-mask";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Loading from "../../components/loading";
@@ -12,6 +11,8 @@ const RegistroPedido = () => {
   const [itens, setItens] = useState([]);
   const [loading, setLoading] = useState(false);
   const [itensSelecionados, setItensSelecionados] = useState([]);
+  const [total, setTotal] = useState(0);
+
   const { id } = useParams();
 
   useEffect(() => {
@@ -19,8 +20,6 @@ const RegistroPedido = () => {
       .get(`/user/${id}`)
       .then((res) => {
         setCliente(res.data);
-
-        console.log(res.data);
 
         setLoading(true);
       })
@@ -30,14 +29,16 @@ const RegistroPedido = () => {
 
     axios.get("/cardapio").then((res) => {
       const listItens = res.data.filter((item) => item.active === true);
-      console.log(listItens);
 
       setItens(listItens);
     });
-  }, []);
+  }, [id]);
 
   const nextStep = (e) => {
     e.preventDefault();
+     setTotal(
+      itensSelecionados.reduce((acc, i) => acc + i.preco * i.quantidade, 0)
+    );
     setStep(2);
   };
 
@@ -46,26 +47,34 @@ const RegistroPedido = () => {
     setStep(1);
   };
 
-  const handleAddItem = (item, delta) => {
+  const handleAddItem = (item, isChecked) => {
     setItensSelecionados((prev) => {
-      const existeItem = prev.find((id) => id === item.id);
-
-      if (existeItem) {
-        const novaQuantidade = existeItem.quantidade + delta;
-
-        if (novaQuantidade < 1) {
-          return prev.filter((i) => i.id !== item.id);
-        } else {
-          return prev.map((i) =>
-            i.id === item.id ? { ...i, quantidade: novaQuantidade } : i
-          );
+      if (isChecked) {
+        // Se estiver marcado e o item ainda não foi adicionado, adiciona com quantidade 1
+        if (!prev.some((i) => i.id === item.id)) {
+          return [...prev, { ...item, quantidade: 1 }];
         }
-      } else if (delta > 0) {
-        return [...prev, { id: item.id, preco: item.preco, quantidade: 1 }];
+      } else {
+        // Se for desmarcado, remove o item da lista
+        return prev.filter((i) => i.id !== item.id);
       }
+
+      console.log(prev)
 
       return prev;
     });
+  };
+
+  const handleUpdateQuantidade = (item, delta) => {
+    setItensSelecionados((prev) => {
+      return prev.map((i) =>
+        i.id === item.id
+          ? { ...i, quantidade: Math.max(1, i.quantidade + delta) }
+          : i
+      );
+    });
+
+   
   };
 
   const handleSubimit = (e) => {
@@ -78,9 +87,12 @@ const RegistroPedido = () => {
       metodo_pagamento: e.target.floatingSelectMetodo.value,
       total: e.target.floatingInputPreco.value,
     };
-
     console.log(pedido);
+
+    
   };
+
+ 
 
   return (
     <>
@@ -112,48 +124,67 @@ const RegistroPedido = () => {
 
                   {itens.length > 0 ? (
                     <>
-                      {itens.map((item) => (
-                        <CardItemPedidoS key={item.id}>
-                          <img src="https://benditosalgado.com.br/wp-content/uploads/2022/06/Morango-Coberto-Doce-de-Leite-Branco2.jpg" />
+                      {itens.map((item) => {
+                        const itemSelecionado = itensSelecionados.find(
+                          (i) => i.id === item.id
+                        );
 
-                          <div className="body-card-item">
-                            <div className="top-line">
-                              <h6>{item.titulo}</h6>
-                              <span>R$ {item.preco}</span>
-                            </div>
+                        return (
+                          <CardItemPedidoS key={item.id}>
+                            <img
+                              src="https://benditosalgado.com.br/wp-content/uploads/2022/06/Morango-Coberto-Doce-de-Leite-Branco2.jpg"
+                              alt="doce png"
+                            />
 
-                            <div className="quantidade-controle">
-                              <button type="button">
-                                {" "}
-                                <i className="bi bi-dash-circle"></i>
-                              </button>
-                              <span>0</span>
-                              <button type="button">
-                                {" "}
-                                <i className="bi bi-plus-circle"></i>
-                              </button>
-                            </div>
+                            <div className="body-card-item">
+                              <div className="top-line">
+                                <h6>{item.titulo}</h6>
+                                <span>R$ {item.preco}</span>
+                              </div>
 
-                            <div>
-                              {" "}
-                              <input
-                                type="checkbox"
-                                className="btn-check"
-                                id={"item-" + item.id}
-                                checked={itensSelecionados.includes(item.id)}
-                                onChange={() => handleAddItem(item.id)}
-                              />
-                              <label
-                                className="btn btn-outline-primary"
-                                for={"item-" + item.id}
-                                key={item.id}
-                              >
-                                adicionar
-                              </label>
+                              {itemSelecionado && (
+                                <div className="quantidade-controle">
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      handleUpdateQuantidade(item, -1)
+                                    }
+                                  >
+                                    <i className="bi bi-dash-circle"></i>
+                                  </button>
+                                  <span>{itemSelecionado.quantidade}</span>
+                                  <button
+                                    type="button"
+                                    onClick={() =>
+                                      handleUpdateQuantidade(item, 1)
+                                    }
+                                  >
+                                    <i className="bi bi-plus-circle"></i>
+                                  </button>
+                                </div>
+                              )}
+
+                              <div>
+                                <input
+                                  type="checkbox"
+                                  className="btn-check"
+                                  id={"item-" + item.id}
+                                  checked={!!itemSelecionado}
+                                  onChange={(e) =>
+                                    handleAddItem(item, e.target.checked)
+                                  }
+                                />
+                                <label
+                                  className="btn btn-outline-primary"
+                                  htmlFor={"item-" + item.id}
+                                >
+                                  {itemSelecionado ? "Remover" : "Adicionar"}
+                                </label>
+                              </div>
                             </div>
-                          </div>
-                        </CardItemPedidoS>
-                      ))}
+                          </CardItemPedidoS>
+                        );
+                      })}
                     </>
                   ) : (
                     <> </>
@@ -166,12 +197,12 @@ const RegistroPedido = () => {
                 <>
                   {/* preço do item */}
                   <div className="form-floating mb-3">
-                    <ReactInputMask
-                      mask={"99,99"}
+                    <input
                       type="text "
                       className="form-control"
                       id="floatingInputPreco"
                       placeholder="R$ 0,00"
+                      value={total.toFixed(2)}
                       disabled
                     />
                     <label for="floatingInputPreco">Preço </label>

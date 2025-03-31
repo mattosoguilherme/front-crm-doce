@@ -1,4 +1,4 @@
-import ContainerS, { DivInputBuscaS, H1s, InputBuscaS, ListS } from "../styles";
+import ContainerS, { DivInputBuscaS, ListS } from "../styles";
 import Header from "../../components/navbar";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
@@ -73,7 +73,7 @@ const Cliente = () => {
           </>
         )}
 
-        <p> lembra de fazer a logica de busca do video </p>
+        {/* <p> lembra de fazer a logica de busca do video </p>
 
         <iframe
           width="560"
@@ -91,7 +91,7 @@ const Cliente = () => {
           <br /> cliente / adicionar novo pedido / pegar ID e subir vinculado{" "}
           <br /> é melhor deixar pagina de cliente vinculada com função interna
           <br /> de registra de pedido para ficar mais otimizado{" "}
-        </p>
+        </p> */}
       </ContainerS>
     </>
   );

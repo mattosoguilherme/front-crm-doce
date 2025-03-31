@@ -7,11 +7,13 @@ const ContainerS = styled.main`
   padding-left: calc(var(--bs-gutter-x) * 0.5);
   width: 100%;
   height: 100%;
+  min-height: 100vh;
   margin-right: auto;
   margin-left: auto;
   display: flex;
   background-color: #f2e5bd;
   flex-direction: column;
+  flex:1;
 
   @media (max-width: 420px) {
     background-color: #db496e;
@@ -342,7 +344,7 @@ export const CardItemPedidoS = styled.div`
 export const DivInputBuscaS = styled.div`
   display: flex;
   justify-content: center;
-  
+
   input {
     width: 90%;
     height: 3rem;
