@@ -21,7 +21,7 @@ const CardCliente = (props) => {
           <h5>{cliente.produto} </h5>
           <h5> {cliente.unidade} </h5>
 
-          <Link to="/pedido/registro">
+          <Link to={`/pedido/registro/${cliente.id}`}>
             <button className="btn btn-primary " type="button">
               NOVO PEDIDO
             </button>

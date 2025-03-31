@@ -8,7 +8,7 @@ const Login = () => {
   return (
     <>
       <ContainerHomeS>
-      <img className="logo" src="https://i.ibb.co/gVnmYDf/logo.jpg" width={150} />
+      <img className="logo" alt="logo" src="https://i.ibb.co/gVnmYDf/logo.jpg" width={150} />
           <FormS>
             <input type="text" placeholder="email" />
             <input type="password" placeholder="Senha" />

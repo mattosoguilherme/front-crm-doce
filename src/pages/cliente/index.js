@@ -1,21 +1,30 @@
-import ContainerS, { H1s, ListS } from "../styles";
+import ContainerS, { DivInputBuscaS, H1s, InputBuscaS, ListS } from "../styles";
 import Header from "../../components/navbar";
-import { Link } from "react-router-dom";
 import { useEffect, useState } from "react";
 import Loading from "../../components/loading";
 import axios from "axios";
 import CardCliente from "../../components/card/cliente";
+import { useMemo } from "react";
 
 const Cliente = () => {
   const [clientes, setClientes] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [busca, setBusca] = useState("");
+
+  const clientesFiltrados = useMemo(() => {
+    const toLowerCaseBusca = busca.toLowerCase();
+    return clientes.filter((cliente) =>
+      cliente.nome.toLowerCase().includes(toLowerCaseBusca)
+    );
+  }, [clientes, busca]);
 
   useEffect(() => {
     axios
       .get("/user")
       .then((response) => {
+        let listaClientes = response.data;
         
-        setClientes(response.data);
+        setClientes(listaClientes.sort((a, b) => a.nome.localeCompare(b.nome)));
         setLoading(true);
       })
       .catch((error) => {
@@ -28,14 +37,24 @@ const Cliente = () => {
       <ContainerS>
         <Header />
 
-        <H1s> Clientes</H1s>
+      <DivInputBuscaS> 
+
+        <input 
+        placeholder="Search"
+        type="text"
+        value={busca}
+        onChange={(e) => setBusca(e.target.value)}
+        />
+      </DivInputBuscaS>
 
         {loading ? (
           <> 
+           
+
           <ListS> 
 
 
-            {clientes.map((cliente) => ( 
+            {clientesFiltrados.map((cliente) => ( 
               <> 
               
               

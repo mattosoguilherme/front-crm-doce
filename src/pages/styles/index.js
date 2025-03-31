@@ -26,14 +26,13 @@ const ContainerS = styled.main`
   }
 
   input {
-    width:2.5rem!important;
-    height:1.5rem!important;
+    width: 2.5rem;
+    height: 1.5rem;
   }
 
   .preco {
-  font-size: 1rem;
+    font-size: 1rem;
   }
-
 `;
 
 export const ContainerHomeS = styled.main`
@@ -147,6 +146,25 @@ export const FormS = styled.form`
   button {
     margin-bottom: 1rem;
   }
+
+  .prox {
+    background-color: none;
+    border: none;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    width: 4rem;
+    align-self: end;
+    color: #db496e;
+    border-radius: 5px;
+  }
+  .end {
+    background-color: none;
+    border: none;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    width: 4rem;
+    align-self: start;
+    color: #db496e;
+    border-radius: 5px;
+  }
 `;
 
 export const H1s = styled.h1`
@@ -217,16 +235,122 @@ export const CardS = styled.div`
   }
 
   .btn-edit {
-  background-color:none;
-  border:none;
-  padding:0;
-  width:1.2rem;
-  display:flex;
-  justify-content:center;
-  align-items:center;
-  position:absolute;
-  border-radius:5px;
+    background-color: none;
+    border: none;
+    padding: 0;
+    width: 1.2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    border-radius: 5px;
 
+    @media (max-width: 420px) {
+      width: 1rem;
+      height: 1rem;
+    }
+  }
+
+  .btn-edit i {
+    @media (max-width: 420px) {
+      font-size: 0.8rem;
+    }
+  }
+`;
+
+export const CardItemPedidoS = styled.div`
+  background-color: white;
+  display: flex;
+  margin-bottom: 2rem;
+  border-radius: 0.3rem;
+  height: 7rem;
+
+  @media (max-width: 420px) {
+    color: black;
+  }
+
+  img {
+    width: 30%;
+    border-radius: 0.3rem 0 0 0.3rem;
+  }
+
+  .body-card-item {
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    text-align: center;
+    align-items: center;
+    padding: 0.1rem 0.1rem 0.1rem 0.1rem;
+  }
+
+  .body-card-item label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 0.9rem;
+    text-align: center;
+    aling-self: center;
+    width: 8rem;
+    height: 2rem;
+    padding: 0;
+  }
+
+  .top-line {
+    display: flex;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .top-line h6 {
+    margin-top: 0.3rem;
+    margin-left: 0.5rem;
+  }
+
+  .top-line span {
+    background-color: #17a63b;
+    padding: 0.2rem;
+    border-radius: 0.3rem;
+  }
+
+  .quantidade-controle {
+    display: flex;
+    justify-content: center;
+    height: 2rem;
+    width: 100%;
+    justify-content: space-evenly;
+  }
+
+  .quantidade-controle button {
+    background-color: none;
+    border: none;
+  }
+
+  .quantidade-controle button i {
+    font-size: 1.5rem;
+  }
+
+  .quantidade-controle span {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    font-size: 1.2rem;
+  }
+`;
+
+export const DivInputBuscaS = styled.div`
+  display: flex;
+  justify-content: center;
+  
+  input {
+    width: 90%;
+    height: 3rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
   }
 `;
 
