@@ -8,7 +8,6 @@ import CardComandaForUser from "../../components/card/comandaForUser";
 const HomeUser = () => {
   const [loading, setLoading] = useState(false);
   const [user, setUser] = useState();
-  const [comanda, setComanda] = useState();
 
   useEffect(() => {
     const config = {
@@ -20,7 +19,6 @@ const HomeUser = () => {
       .then((res) => {
         setLoading(false);
         setUser(res.data);
-        setComanda(res.data.Comanda);
 
         console.log(res.data);
       })
@@ -54,7 +52,6 @@ const HomeUser = () => {
             <div className="section-buttons">
               <button className="btn btn-primary btn-lg"> PAGAR</button>
               <button className="btn btn-primary btn-lg">
-               
                 ENTRAR EM CONTATO
               </button>
             </div>
