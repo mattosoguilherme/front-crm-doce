@@ -43,7 +43,7 @@ const Login = () => {
             Entrar
           </button>
 
-          <Link to={"/cadastro"}> Ainda não tenho cadastro </Link>
+          {/* <Link to={"/cadastro"}> Ainda não tenho cadastro </Link> */}
         </FormS>
       </ContainerHomeS>
     </>
