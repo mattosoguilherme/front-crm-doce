@@ -6,7 +6,7 @@ import axios from "axios";
 import CardComandaForUser from "../../components/card/comandaForUser";
 
 const HomeUser = () => {
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
   const [user, setUser] = useState();
 
   useEffect(() => {
@@ -17,10 +17,10 @@ const HomeUser = () => {
     axios
       .get("/auth", config)
       .then((res) => {
-        setLoading(false);
         setUser(res.data);
 
-        console.log(res.data);
+          setLoading(false);
+        
       })
       .catch((err) => {
         setLoading(true);
@@ -28,11 +28,9 @@ const HomeUser = () => {
       });
   }, [loading]);
 
-
   const Alert = () => {
-
-    alert("Função ainda não disponivel. Aguardem atualizações!")
-  }
+    alert("Função ainda não disponivel. Aguardem atualizações!");
+  };
 
   return (
     <>
@@ -40,13 +38,19 @@ const HomeUser = () => {
         <HeaderUser />
 
         {loading ? (
-          <Loading />
+         <>    <Loading />  </>
         ) : (
           <div>
-            <h1>Olá, {user?.nome}!</h1>
+            <h3>Olá, {user?.nome}!</h3>
 
             <div className="section">
-              <button className="btn btn-primary btn-sm disable" onClick={Alert}> FAZER PEDIDO</button>
+              <button
+                className="btn btn-primary btn-sm disable"
+                onClick={Alert}
+              >
+                {" "}
+                FAZER PEDIDO
+              </button>
             </div>
 
             {user?.Comanda.map((c, index) => (
@@ -55,15 +59,14 @@ const HomeUser = () => {
               </>
             ))}
 
-            <div className="section-buttons" onClick={Alert}  >
-              <button className="btn btn-primary btn-lg disable"> PAGAR</button>
+            <div className="section-buttons" >
+              <button className="btn btn-primary btn-lg disable" onClick={Alert}> PAGAR</button>
 
               <a href="https://wa.me/5511999241855">
                 <button className="btn btn-primary btn-lg">
                   ENTRAR EM CONTATO
                 </button>
               </a>
-
             </div>
           </div>
         )}

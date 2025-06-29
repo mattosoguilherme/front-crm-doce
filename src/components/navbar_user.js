@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link} from "react-router-dom";
 import styled from "styled-components";
 
 const NavS = styled.nav`
@@ -15,8 +15,8 @@ const HeaderUser = () => {
     <>
       <NavS className="navbar bg-body-tertiary fixed-top">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <img src="https://i.ibb.co/gVnmYDf/logo.jpg" width={50} />
+          <a className="navbar-brand" href="http://doc.comhttps://docetialulu.vercel.app/inicio">
+            <img src="https://i.ibb.co/gVnmYDf/logo.jpg" width={50} alt="logo" />
           </a>
           <button
             className="navbar-toggler"
@@ -59,20 +59,16 @@ const HeaderUser = () => {
                 </li>
 
                 <li className="nav-item">
-                  <Link to={"/pedido"} className="nav-link" href="#">
+                  <Link to={"/inicio"} className="nav-link" href="#">
                     Cadastro
                   </Link>
                 </li>
                  <li className="nav-item">
-                  <Link to={"/pedido"} className="nav-link" href="#">
+                  <Link to={"/inicio"} className="nav-link" href="#">
                     Fazer Pedido
                   </Link>
                 </li>
-                    <li className="nav-item">
-                  <Link to={"/pedido"} className="nav-link" href="#">
-                    Fazer Pedido
-                  </Link>
-                </li>
+                 
 
             
                 <li className="nav-item">
