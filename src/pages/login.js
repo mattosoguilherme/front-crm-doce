@@ -1,4 +1,4 @@
-import { Link, useNavigate } from "react-router-dom";
+import {  useNavigate } from "react-router-dom";
 import { ContainerHomeS, FormS } from "./styles";
 import axios from "axios";
 
@@ -12,17 +12,14 @@ const Login = () => {
     await axios
       .post("/auth", { email, senha })
       .then((response) => {
-        
-          localStorage.setItem("token", response.data.token);
+        localStorage.setItem("token", response.data.token);
 
-          if (response.data.user.role === "USER"){ 
-            navigate("/inicio");
-          }
-        
+        if (response.data.user.role === "USER") {
+          navigate("/inicio");
+        }
       })
       .catch((error) => {
-        console.error("Login error:", error);
-        alert("Ocorreu um erro durante o login. Tente novamente");
+        alert(error.response.data.message);
       });
   };
 
