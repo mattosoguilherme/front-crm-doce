@@ -84,7 +84,7 @@ const Pedidos = () => {
                 value={searchByStatus}
                 onChange={(e) => setSearchByStatus(e.target.value)}
               >
-                <option value="todos">Todos</option>
+                <option value="">Todos</option>
                 <option value="pendente">Pendente</option>
                 <option value="pago">Pago</option>
               </select>
@@ -97,7 +97,7 @@ const Pedidos = () => {
                 value={searchByMetodo}
                 onChange={(e) => setSearchByMetodo(e.target.value)}
               >
-                <option value="todos">Todos</option>
+                <option value="">Todos</option>
                 <option value="cartao">Cartão</option>
                 <option value="dinheiro">Dinheiro</option>
                 <option value="pix">Pix</option>
@@ -113,7 +113,7 @@ const Pedidos = () => {
                 onChange={(e) => setSearchByData(e.target.value)}
               />
             </div>
-            <button type="button" onClick={limparFiltros}>
+            <button className="btn-clear" type="button" onClick={limparFiltros}>
               Limpar Filtros
             </button>
           </form>

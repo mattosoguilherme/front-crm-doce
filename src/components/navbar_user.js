@@ -10,8 +10,7 @@ const NavS = styled.nav`
   }
 `;
 
-const Header = () => {
-  const navigate = useNavigate();
+const HeaderUser = () => {
   return (
     <>
       <NavS className="navbar bg-body-tertiary fixed-top">
@@ -50,7 +49,7 @@ const Header = () => {
               <ul className="navbar-nav justify-content-end flex-grow-1 pe-3">
                 <li className="nav-item">
                   <Link
-                    to={"/home"}
+                    to={"/inicio"}
                     className="nav-link active"
                     aria-current="page"
                     href="#"
@@ -58,61 +57,24 @@ const Header = () => {
                     Home
                   </Link>
                 </li>
-                <li className="nav-item">
-                  <Link to={"/cardapio"} className="nav-link" href="#">
-                    cardapio
-                  </Link>
-                </li>
 
                 <li className="nav-item">
                   <Link to={"/pedido"} className="nav-link" href="#">
-                    Pedidos
+                    Cadastro
+                  </Link>
+                </li>
+                 <li className="nav-item">
+                  <Link to={"/pedido"} className="nav-link" href="#">
+                    Fazer Pedido
+                  </Link>
+                </li>
+                    <li className="nav-item">
+                  <Link to={"/pedido"} className="nav-link" href="#">
+                    Fazer Pedido
                   </Link>
                 </li>
 
-                <li className="nav-item">
-                  <Link to={"/cliente"} className="nav-link" href="#">
-                    clientes
-                  </Link>
-                </li>
-
-                <li className="nav-item">
-                  <Link to={"/comanda"} className="nav-link" href="#">
-                    comandas
-                  </Link>
-                </li>
-                <li className="nav-item dropdown">
-                  <a
-                    className="nav-link dropdown-toggle"
-                    href="#"
-                    role="button"
-                    data-bs-toggle="dropdown"
-                    aria-expanded="false"
-                  >
-                    Configurações
-                  </a>
-                  <ul className="dropdown-menu">
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Action
-                      </a>
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Another action
-                      </a>
-                    </li>
-                    <li>
-                      <hr className="dropdown-divider" />
-                    </li>
-                    <li>
-                      <a className="dropdown-item" href="#">
-                        Something else here
-                      </a>
-                    </li>
-                  </ul>
-                </li>
-
+            
                 <li className="nav-item">
                   <Link to={"/"} className="nav-link" href="#">
                     sair
@@ -127,4 +89,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderUser;

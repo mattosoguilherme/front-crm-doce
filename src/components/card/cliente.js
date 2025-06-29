@@ -3,6 +3,7 @@ import { CardS } from "../../pages/styles";
 
 const CardCliente = (props) => {
   const cliente = props.data;
+  
   return (
     <>
       <CardS className="card">
@@ -17,13 +18,20 @@ const CardCliente = (props) => {
           alt="..."
         />
         <div className="card-body">
-          <h5 className="card-title">{cliente.nome}</h5>
-          <h5>{cliente.produto} </h5>
-          <h5> {cliente.unidade} </h5>
+          <h6 className="card-title">{cliente.nome}</h6>
+          <h6>{cliente.produto} </h6>
+          <h6> {cliente.unidade} </h6>
 
           <Link to={`/pedido/registro/${cliente.id}`}>
             <button className="btn btn-primary " type="button">
               NOVO PEDIDO
+            </button>
+          </Link>
+
+          <Link to={`/comanda/${cliente.id}`}>
+            <button className="btn btn-secondary " type="button">
+              
+              COMANDAS
             </button>
           </Link>
         </div>

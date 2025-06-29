@@ -13,7 +13,7 @@ const ContainerS = styled.main`
   display: flex;
   background-color: #f2e5bd;
   flex-direction: column;
-  flex:1;
+  flex: 1;
 
   @media (max-width: 420px) {
     background-color: #db496e;
@@ -34,6 +34,68 @@ const ContainerS = styled.main`
 
   .preco {
     font-size: 1rem;
+  }
+
+  .section {
+    width: 100%;
+    display: flex;
+    justify-content: start;
+    margin: 1rem 0 1rem 0;
+    padding: 0 1rem;
+  }
+  .section button {
+    width: 10rem;
+    height: 3rem;
+    font-size: 1.2rem;
+    background-color: #db496e;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.56);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
+    margin-right: 1rem;
+    margin-bottom: 1rem;
+    @media (max-width: 420px) {
+      width: 100%;
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+  }
+
+  .section-buttons {
+    width: 100%;
+    height: 10rem;
+    display: flex;
+    padding:1rem;
+    flex-direction: column;
+  
+    justify-content: space-evenly;
+  }
+
+  .section-buttons button {
+    width: 100%;
+    height: 3rem;
+    font-size: 1.2rem;
+    background-color: #db496e;
+    color: white;
+    border: none;
+    border-radius: 0.3rem;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.56);
+    transition: background-color 0.3s ease;
+    cursor: pointer;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-weight: bold;
   }
 `;
 
@@ -119,7 +181,9 @@ export const FormS = styled.form`
   flex-direction: column;
   width: 25rem;
   padding: 2rem;
-  border-radius: 0 4rem 0 4rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.56);
+
   align-self: center;
   text-align: center;
 
@@ -166,6 +230,10 @@ export const FormS = styled.form`
     align-self: start;
     color: #db496e;
     border-radius: 5px;
+  }
+
+  a {
+    color: rgb(241, 241, 241);
   }
 `;
 
@@ -230,6 +298,21 @@ export const CardS = styled.div`
 
   .card-body {
     padding: 0.5rem !important;
+  }
+
+  .card-body button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+
+    width: 8rem;
+    height: 1rem;
+    font-size: 0.6rem;
+    margin-bottom: 0.2rem;
+  }
+  a {
+    text-decoration: none;
   }
 
   img {
@@ -356,36 +439,357 @@ export const DivInputBuscaS = styled.div`
   }
 `;
 
-export const DivFormSearchS = styled.div` 
-width: 100%;
-background-color:rgb(252, 132, 198);
-padding: 0.9rem;
-border-radius: 0.8rem;
-display: flex;
-justify-content: space-evenly;
-margin-bottom: 2rem;
+export const DivFormSearchS = styled.div`
+  width: 100%;
+  background-color: rgb(252, 132, 198);
+  padding: 0.9rem;
+  border-radius: 0.8rem;
+  display: flex;
+  justify-content: space-evenly;
+  margin-bottom: 2rem;
 
-form{
+  form {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+  }
+  form div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
 
-display: flex;
-justify-content:space-evenly;
-width: 100%;
-}
-form div{
-display: flex;
-flex-direction: column;
-justify-content: center;
-}
+  form div input,
+  select {
+    width: 100%;
+    height: 2.2rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+  }
 
-form div input,select{
-width: 100%;
-height: 2.2rem;
-padding: 0.5rem;
-border-radius: 0.3rem;
-border: none;
+  .btn-clear {
+    height: 2.5rem;
+    padding: 0.5rem;
+    align-self: end;
+    border-radius: 0.3rem;
+    text-align: center;
+    width: 15rem;
+    background-color: #db496e;
+    color: white;
+  }
+`;
 
-}
+export const FormComanda = styled.form`
+  width: 30rem;
+  font-size: 0.8rem;
+  background-color: #db496e;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgb(255, 252, 252);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.49);
+  margin-bottom: 2rem;
 
+  label {
+    font-size: 1rem;
+    background-color: ;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* ✅ Garante alinhamento das colunas */
+    margin-bottom: 1rem;
+  }
+
+  thead,
+  tfoot {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+    max-height: 10rem;
+    overflow-y: auto;
+  }
+
+  th,
+  td {
+    width: 1%; /* ✅ Mesma largura para alinhar */
+    padding: 0.2rem;
+    text-align: center;
+    box-sizing: border-box; /* ✅ Evita estouro da largura */
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #636773;
+    border: none;
+    font-weight: bold;
+  }
+  td {
+    background-color: #f2dcd8;
+  }
+
+  #primeiro {
+    border-radius: 0.3rem 0 0 0;
+  }
+  #ultimo {
+    border-radius: 0 0.3rem 0 0;
+  }
+
+  tfoot tr td {
+    font-weight: bold;
+    background-color: #636773;
+    border: none;
+    border-radius: 0 0 0.3rem 0.3rem;
+    padding: 0 2rem 0 0;
+    font-size: 1.1rem;
+  }
+  tfoot tr td:nth-child(2) {
+    text-align: center;
+  }
+
+  input,
+  select {
+    font-size: 0.8rem;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+    margin-bottom: 1rem;
+  }
+
+  .PENDENTE {
+    background-color: rgb(255, 230, 7);
+    color: black;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+  }
+  .PAGO {
+    background-color: #4dfaa9;
+    color: black;
+    border-radius: 0.3rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    height: 1.5rem;
+    width: 30%;
+    text-align: center;
+  }
+
+  .status_info {
+    display: flex;
+    height: 5rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    justify-content: space-between;
+  }
+  .left,
+  .right {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+  }
+  .right .status_pagamento {
+    background-color: rgb(255, 255, 255);
+    border-radius: 0.3rem;
+    border: 1px solid #636773;
+    height: 1.4rem;
+    align-self: center;
+    text-align: center;
+    width: 30%;
+  }
+
+  .centro {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #636773;
+    padding: 0.2rem 2rem 0.2rem 2rem;
+    border-radius: 0.3rem;
+    color: white;
+    font-size: 0.8rem;
+    width: 30%;
+    height: 1.5rem;
+  }
+
+  .footer-comanda {
+    display: flex;
+    justify-content: space-evenly;
+  }
+
+  .edit-button {
+    width: 7rem;
+  }
+
+  select {
+    padding: 0;
+  }
+`;
+
+export const FormComandaUser = styled.form`
+  width: 30rem;
+  font-size: 0.8rem;
+  background-color: #db496e;
+  padding: 1rem;
+  border-radius: 10px;
+  border: 1.5px solid rgb(255, 252, 252);
+  box-shadow: 0px 10px 25px rgba(0, 0, 0, 0.49);
+  margin-bottom: 2rem;
+
+  @media (max-width: 420px) {
+    width: 100%;
+    padding: 0;
+    font-size: 0.8rem;
+    box-shadow: 0px 5px 12px rgba(0, 0, 0, 0.49);
+    margim: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: none;
+  }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed; /* ✅ Garante alinhamento das colunas */
+    margin-bottom: 1rem;
+
+    @media (max-width: 420px) {
+      width: 100%;
+      font-size: 0.5rem;
+      margin-bottom: none;
+    }
+  }
+
+  thead,
+  tfoot {
+    display: table;
+    width: 100%;
+    table-layout: fixed;
+
+    @media (max-width: 420px) {
+      width: 100%;
+      font-size: 0.7rem;
+    }
+  }
+
+  tbody {
+    display: block;
+    width: 100%;
+    max-height: 10rem;
+    overflow-y: auto;
+  }
+
+  th,
+  td {
+    width: 1%; /* ✅ Mesma largura para alinhar */
+    padding: 0.2rem;
+    text-align: center;
+    box-sizing: border-box; /* ✅ Evita estouro da largura */
+
+    @media (max-width: 420px) {
+      font-size: 0.5rem;
+    }
+  }
+
+  th {
+    font-weight: bold;
+    background-color: #636773;
+    border: none;
+    font-weight: bold;
+  }
+  td {
+    background-color: #f2dcd8;
+  }
+
+  #primeiro {
+    border-radius: 0.3rem 0 0 0;
+  }
+  #ultimo {
+    border-radius: 0 0.3rem 0 0;
+  }
+
+  tfoot tr td {
+    font-weight: bold;
+    background-color: #636773;
+    border: none;
+    border-radius: 0 0 0.3rem 0.3rem;
+    padding: 0 2rem 0 0;
+    font-size: 1.1rem;
+
+    @media (max-width: 420px) {
+      padding: 0 1rem 0 0;
+      font-size: 0.5rem;
+      width: 340px;
+    }
+  }
+  tfoot tr td:nth-child(2) {
+    text-align: center;
+  }
+
+  input,
+  select {
+    font-size: 0.8rem;
+    width: 100%;
+    height: 1.5rem;
+    padding: 0.5rem;
+    border-radius: 0.3rem;
+    border: none;
+
+    @media (max-width: 420px) {
+      width: 80%;
+    }
+  }
+
+  .PENDENTE {
+    background-color: rgb(255, 230, 7);
+    color: black;
+    border-radius: 0.3rem;
+    text-align: center;
+    font-size: 0.8rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+  }
+  .PAGO {
+    background-color: #4dfaa9;
+    color: black;
+    border-radius: 0.3rem;
+    padding: 0.2rem 1rem 0.2rem 1rem;
+    height: 1.5rem;
+    width: 30%;
+    text-align: center;
+  }
+
+  .status_info {
+    display: flex;
+    height: 5rem;
+    padding: 0.5rem;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 90%;
+    justify-content: space-evenly;
+  }
+
+  .left .info {
+    background-color: #636773;
+    padding: 0.2rem 1rem;
+    border-radius: 0.3rem;
+    width: 10rem;
+  }
+
+  .footer-comanda {
+    display: flex;
+    justify-content: space-evenly;
+  }
 `;
 
 export default ContainerS;

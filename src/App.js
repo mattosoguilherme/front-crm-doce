@@ -8,6 +8,9 @@ import Pedidos from "./pages/pedido";
 import RegistroPedido from "./pages/pedido/registro";
 import Cliente from "./pages/cliente";
 import EditCardapio from "./pages/cardapio/edit";
+import Comanda from "./pages/comanda";
+import ViewComanda from "./pages/comanda/viewID";
+import HomeUser from "./pages/area user/home_user";
 
 const App = () => {
   return (
@@ -23,6 +26,9 @@ const App = () => {
           <Route path="/pedido" element={<Pedidos />} />
           <Route path="/pedido/registro/:id" element={<RegistroPedido />} />
           <Route path="/cliente" element={<Cliente />} />
+          <Route path="/comanda" element={<Comanda />} />
+          <Route path="/comanda/:id" element={<ViewComanda />} />
+          <Route path="/inicio" element={<HomeUser />} />
         </Routes>
       </Router>
     </>
