@@ -51,9 +51,13 @@ const HomeUser = () => {
 
             <div className="section-buttons">
               <button className="btn btn-primary btn-lg"> PAGAR</button>
+              
+
               <button className="btn btn-primary btn-lg">
-                ENTRAR EM CONTATO
+                <a href="https://wa.me/11999182455" >     ENTRAR EM CONTATO   </a>
+                
               </button>
+
             </div>
           </div>
         )}
