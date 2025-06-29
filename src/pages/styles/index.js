@@ -97,6 +97,11 @@ const ContainerS = styled.main`
     text-align: center;
     font-weight: bold;
   }
+
+  a{
+  text-decoration:none;
+  
+  }
 `;
 
 export const ContainerHomeS = styled.main`
