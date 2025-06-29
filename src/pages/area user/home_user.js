@@ -40,7 +40,7 @@ const HomeUser = () => {
             <h1>Olá, {user?.nome}!</h1>
 
             <div className="section">
-              <button className="btn btn-primary btn-sm"> FAZER PEDIDO</button>
+              <button className="btn btn-primary btn-sm disable"> FAZER PEDIDO</button>
             </div>
 
             {user?.Comanda.map((c, index) => (
@@ -50,7 +50,7 @@ const HomeUser = () => {
             ))}
 
             <div className="section-buttons">
-              <button className="btn btn-primary btn-lg"> PAGAR</button>
+              <button className="btn btn-primary btn-lg disable"> PAGAR</button>
               <a href="https://wa.me/5511999241855">
                 <button className="btn btn-primary btn-lg">
                   ENTRAR EM CONTATO
