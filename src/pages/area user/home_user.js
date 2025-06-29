@@ -28,6 +28,12 @@ const HomeUser = () => {
       });
   }, [loading]);
 
+
+  const Alert = () => {
+
+    alert("Função ainda não disponivel. Aguardem atualizações!")
+  }
+
   return (
     <>
       <ContainerS>
@@ -40,7 +46,7 @@ const HomeUser = () => {
             <h1>Olá, {user?.nome}!</h1>
 
             <div className="section">
-              <button className="btn btn-primary btn-sm disable"> FAZER PEDIDO</button>
+              <button className="btn btn-primary btn-sm disable" onClick={Alert}> FAZER PEDIDO</button>
             </div>
 
             {user?.Comanda.map((c, index) => (
@@ -49,7 +55,7 @@ const HomeUser = () => {
               </>
             ))}
 
-            <div className="section-buttons">
+            <div className="section-buttons" onClick={Alert}  >
               <button className="btn btn-primary btn-lg disable"> PAGAR</button>
 
               <a href="https://wa.me/5511999241855">
@@ -57,7 +63,7 @@ const HomeUser = () => {
                   ENTRAR EM CONTATO
                 </button>
               </a>
-              
+
             </div>
           </div>
         )}
