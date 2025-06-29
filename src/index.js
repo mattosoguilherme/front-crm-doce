@@ -5,7 +5,7 @@ import reportWebVitals from "./reportWebVitals";
 import axios from "axios";
 import GlobalStyle from "./global.style";
 
-axios.defaults.baseURL = "http://localhost:3080";
+axios.defaults.baseURL = "https://orda-f51b.onrender.com";
 axios.defaults.headers.post["Content-Type"] = "application/json";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
