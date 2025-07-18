@@ -15,7 +15,7 @@ const ContainerS = styled.main`
   flex-direction: column;
   flex: 1;
 
-  @media (max-width: 420px) {
+  @media (max-width: 480px) {
     background-color: #db496e;
     color: white;
     height: 100%;
