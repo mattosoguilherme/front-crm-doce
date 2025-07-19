@@ -1,16 +1,13 @@
 import { useEffect, useState } from "react";
 import { FormComanda } from "../../pages/styles";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
 
 const CardComanda = (props) => {
-  const { data, key } = props;
-  const { id, nome_cliente, status, saldo_pendente, saldo_quitado, total } =
-    data;
+  const { data } = props;
+  const { id, nome_cliente, status, saldo_quitado, total } = data;
   const [pedido, setPedido] = useState();
   const [user, setUser] = useState({});
   const [edit, setEdit] = useState(false);
-  const navigate = useNavigate();
 
   useEffect(() => {
     axios
@@ -28,10 +25,10 @@ const CardComanda = (props) => {
     // Implementar a lógica para enviar a comanda para o cliente
 
     const msg = `
-    🌟 Olá! Sou a Maju, assistente da loja. 😊  
-  
-    👤 *${nome_cliente}*, \n espero que esteja bem!  
-    Me perdoe pelo horário, mas estou passando para lembrar sobre o pagamento da sua *comanda de maio*.  
+    🌟 Oiii *${nome_cliente.trim()}*,espero que esteja bem!
+    Maju aqui, sua assistente virtual mais açucarada 💜  
+   
+    Seu vendedor(a)  
   
     📋 *COMANDA DE PEDIDO* 📋  
   
@@ -45,16 +42,11 @@ const CardComanda = (props) => {
   
     💰 *Total: R$ ${total}*  
   
-    🔹 Para facilitar, você pode fazer o pagamento via *Pix*:  
+    🔹 Para facilitar, se você for fazer o pagamento via *Pix*:  
     💳 *Chave Pix (Nubank): 11999241855*  
+
   
-    📩 Assim que realizar o pagamento, por gentileza, envie o comprovante para agilizar a confirmação.  
-  
-    Obrigado pela preferência! Qualquer dúvida, estou por aqui. 😊🍬  
-  
-    📲 *Fique por dentro das novidades e promoções!*  
-    👉 Siga a gente no Instagram: [@docinhostialulu_](https://www.instagram.com/docinhostialulu_?igsh=MW1tNDNjODdqeXp3Mg==) 🍭✨  
-    👉 Entre no nosso grupo do WhatsApp e receba ofertas exclusivas: [Clique aqui](https://chat.whatsapp.com/BvgnLYXjYaR8ek68dMeGvK) 💬🎁  
+    Obrigado pela preferência! Qualquer dúvida, estou por aqui. 😊🍬   
   `;
     axios
       .post("/whatsapp", {
@@ -278,8 +270,6 @@ const CardComanda = (props) => {
           </>
         )}
       </FormComanda>
-
-      
     </>
   );
 };
