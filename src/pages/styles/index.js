@@ -643,16 +643,19 @@ export const FormComandaUser = styled.form`
     overflow-y: auto;
   }
 
-  th,
-  td {
+  th{
     width: 1%; /* ✅ Mesma largura para alinhar */
     padding: 0.2rem;
     text-align: center;
     box-sizing: border-box; /* ✅ Evita estouro da largura */
+  } 
 
-    @media (max-width: 420px) {
-      font-size: 0.5rem;
-    }
+  td {
+    width: 1%; /* ✅ Mesma largura para alinhar */
+    padding: 0.2rem;
+    text-align: start;
+    box-sizing: border-box; /* ✅ Evita estouro da largura */
+  
   }
 
   th {

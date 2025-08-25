@@ -20,6 +20,13 @@ const CardComandaForUser = (props) => {
       });
   }, []);
 
+    const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${day}/${month}`;
+};
+
   return (
     <>
       <FormComandaUser>
@@ -57,9 +64,10 @@ const CardComandaForUser = (props) => {
               <thead className="table-light">
                 <tr>
                   <th id="primeiro" scope="col">
-                    Produto
+                    Data
                   </th>
-                  <th scope="col">Quantidade</th>
+                  <th scope="col">Produto</th>
+                  <th scope="col">Qtd</th>
                   <th scope="col">Valor Un.</th>
                   <th id="ultimo" scope="col">
                     Total
@@ -71,6 +79,7 @@ const CardComandaForUser = (props) => {
                 {pedido &&
                   pedido.map((p, index) => (
                     <tr key={p.id || index}>
+                      <td>{formatDate(p.createdAt)}</td>
                       <td>{p.pedidoitem[0].cardapio.titulo}</td>
                       <td>{p.pedidoitem[0].quantidade}</td>
                       <td>R$ {p.pedidoitem[0].valor_unitario}</td>

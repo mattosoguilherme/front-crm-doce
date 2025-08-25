@@ -15,7 +15,7 @@ const CardComanda = (props) => {
       .then((res) => {
         setUser(res.data.user);
         setPedido(res.data.Pedidos);
-        console.log(res.data.Pedidos);
+        
       })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err.message);
