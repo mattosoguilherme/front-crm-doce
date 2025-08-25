@@ -463,12 +463,19 @@ export const FormComanda = styled.form`
     overflow-y: auto;
   }
 
-  th,
-  td {
+  th{
     width: 1%; /* ✅ Mesma largura para alinhar */
     padding: 0.2rem;
     text-align: center;
     box-sizing: border-box; /* ✅ Evita estouro da largura */
+  } 
+
+  td {
+    width: 1%; /* ✅ Mesma largura para alinhar */
+    padding: 0.2rem;
+    text-align: start;
+    box-sizing: border-box; /* ✅ Evita estouro da largura */
+  
   }
 
   th {

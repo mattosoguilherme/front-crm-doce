@@ -15,6 +15,7 @@ const CardComanda = (props) => {
       .then((res) => {
         setUser(res.data.user);
         setPedido(res.data.Pedidos);
+        console.log(res.data.Pedidos);
       })
       .catch((err) => {
         console.error("ops! ocorreu um erro" + err.message);
@@ -83,6 +84,14 @@ const CardComanda = (props) => {
       setEdit(false);
     });
   };
+
+
+  const formatDate = (dateString) => {
+  const date = new Date(dateString);
+  const day = String(date.getDate()).padStart(2, "0");
+  const month = String(date.getMonth() + 1).padStart(2, "0");
+  return `${day}/${month}`;
+};
 
   return (
     <>
@@ -179,9 +188,10 @@ const CardComanda = (props) => {
                 <thead className="table-light">
                   <tr>
                     <th id="primeiro" scope="col">
-                      Produto
+                      Data
                     </th>
-                    <th scope="col">Quantidade</th>
+                    <th scope="col">Produto</th>
+                    <th scope="col">Qtd</th>
                     <th scope="col">Valor Un.</th>
                     <th id="ultimo" scope="col">
                       Total
@@ -193,6 +203,7 @@ const CardComanda = (props) => {
                   {pedido &&
                     pedido.map((p, index) => (
                       <tr key={p.id || index}>
+                        <td>{formatDate(p.createdAt)}</td>
                         <td>{p.pedidoitem[0].cardapio.titulo}</td>
                         <td>{p.pedidoitem[0].quantidade}</td>
                         <td>R$ {p.pedidoitem[0].valor_unitario}</td>
