@@ -1,4 +1,4 @@
-import { Link, Navigate, useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 const NavS = styled.nav`
@@ -11,7 +11,7 @@ const NavS = styled.nav`
 `;
 
 const Header = () => {
-  const navigate = useNavigate();
+  
   return (
     <>
       <NavS className="navbar bg-body-tertiary fixed-top">

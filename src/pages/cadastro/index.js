@@ -1,5 +1,5 @@
 import { useEffect } from "react";
-import { DivInfo, FormS, ContainerCadS } from "./styles";
+import { DivInfo, FormS, ContainerCadS } from "../styles";
 import axios from "axios";
 import ReactInputMask from "react-input-mask";
 

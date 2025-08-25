@@ -26,7 +26,7 @@ const Cliente = () => {
         
         setClientes(listaClientes.sort((a, b) => a.nome.localeCompare(b.nome)));
         setLoading(true);
-        console.log(response)
+        
       })
       .catch((error) => {
         console.error(error);

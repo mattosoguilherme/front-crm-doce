@@ -1,8 +1,8 @@
 import { useNavigate } from "react-router-dom";
-import { ContainerHomeS, FormS } from "./styles";
+import { ContainerHomeS, FormS } from "../styles";
 import axios from "axios";
 import { useState } from "react";
-import Loading from "../components/loading";
+import Loading from "../../components/loading";
 
 const Login = () => {
   const [loading, setLoading] = useState();

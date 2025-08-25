@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
-import HeaderUser from "../../components/navbar_user";
 import ContainerS from "../styles";
 import Loading from "../../components/loading";
 import axios from "axios";
 import CardComandaForUser from "../../components/card/comandaForUser";
+import HeaderUser from "../../components/navbar/navbar_user";
 
 const HomeUser = () => {
   const [loading, setLoading] = useState(true);

@@ -1,5 +1,6 @@
 import styled from "styled-components";
 
+// Estilização dos Containers
 const ContainerS = styled.main`
   --bs-gutter-x: 1.5rem;
   --bs-gutter-y: 0;
@@ -73,9 +74,9 @@ const ContainerS = styled.main`
     width: 100%;
     height: 10rem;
     display: flex;
-    padding:1rem;
+    padding: 1rem;
     flex-direction: column;
-  
+
     justify-content: space-evenly;
   }
 
@@ -98,9 +99,8 @@ const ContainerS = styled.main`
     font-weight: bold;
   }
 
-  a{
-  text-decoration:none;
-  
+  a {
+    text-decoration: none;
   }
 `;
 
@@ -179,106 +179,6 @@ export const ContainerCadS = styled.main`
     margin-bottom: 2rem;
   }
 `;
-
-export const FormS = styled.form`
-  background-color: #db496e;
-  display: flex;
-  flex-direction: column;
-  width: 25rem;
-  padding: 2rem;
-  border-radius: 1rem;
-  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.56);
-
-  align-self: center;
-  text-align: center;
-
-  @media (max-width: 420px) {
-    background-color: transparent;
-    width: 100%;
-    placeholder-color: black;
-  }
-
-  label {
-    color: black;
-  }
-
-  input,
-  textarea {
-    margin-bottom: 0.8rem;
-    border: none;
-    border-radius: 0.5rem;
-    padding: 0.5rem;
-  }
-
-  select {
-    margin-bottom: 1.5rem;
-  }
-
-  button {
-    margin-bottom: 1rem;
-  }
-
-  .prox {
-    background-color: none;
-    border: none;
-    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-    width: 4rem;
-    align-self: end;
-    color: #db496e;
-    border-radius: 5px;
-  }
-  .end {
-    background-color: none;
-    border: none;
-    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
-    width: 4rem;
-    align-self: start;
-    color: #db496e;
-    border-radius: 5px;
-  }
-
-  a {
-    color: rgb(241, 241, 241);
-  }
-`;
-
-export const H1s = styled.h1`
-  align-self: center;
-`;
-
-export const DivInfo = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  justify-content: space-around;
-
-  @media (max-width: 420px) {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
-
-  p {
-    align-self: center;
-    margin-right: 3rem;
-    margin-top: 3rem;
-    width: 38rem;
-    text-align: center;
-    background-color: #f29bab;
-    padding: 1rem;
-    border-radius: 1rem;
-    opacity: 0.8;
-
-    @media (max-width: 420px) {
-      width: 100%;
-      align-self: center;
-      margin-right: 0;
-      color: black;
-      background-color: #f2c6ac;
-    }
-  }
-`;
-
 export const ListS = styled.div`
   display: flex;
   justify-content: center;
@@ -289,6 +189,8 @@ export const ListS = styled.div`
     width: 100%;
   }
 `;
+
+// Estilização dos Cards
 
 export const CardS = styled.div`
   margin: 1rem !important ;
@@ -429,6 +331,8 @@ export const CardItemPedidoS = styled.div`
   }
 `;
 
+// Estilização das Divs
+
 export const DivInputBuscaS = styled.div`
   display: flex;
   justify-content: center;
@@ -484,6 +388,44 @@ export const DivFormSearchS = styled.div`
     color: white;
   }
 `;
+export const DivInfo = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-content: space-around;
+
+  @media (max-width: 420px) {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  p {
+    align-self: center;
+    margin-right: 3rem;
+    margin-top: 3rem;
+    width: 38rem;
+    text-align: center;
+    background-color: #f29bab;
+    padding: 1rem;
+    border-radius: 1rem;
+    opacity: 0.8;
+
+    @media (max-width: 420px) {
+      width: 100%;
+      align-self: center;
+      margin-right: 0;
+      color: black;
+      background-color: #f2c6ac;
+    }
+  }
+`;
+export const DivDashboard = styled.div`
+
+`
+
+
+// Estilização dos Formularios
 
 export const FormComanda = styled.form`
   width: 30rem;
@@ -796,5 +738,75 @@ export const FormComandaUser = styled.form`
     justify-content: space-evenly;
   }
 `;
+
+export const FormS = styled.form`
+  background-color: #db496e;
+  display: flex;
+  flex-direction: column;
+  width: 25rem;
+  padding: 2rem;
+  border-radius: 1rem;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.56);
+
+  align-self: center;
+  text-align: center;
+
+  @media (max-width: 420px) {
+    background-color: transparent;
+    width: 100%;
+    placeholder-color: black;
+  }
+
+  label {
+    color: black;
+  }
+
+  input,
+  textarea {
+    margin-bottom: 0.8rem;
+    border: none;
+    border-radius: 0.5rem;
+    padding: 0.5rem;
+  }
+
+  select {
+    margin-bottom: 1.5rem;
+  }
+
+  button {
+    margin-bottom: 1rem;
+  }
+
+  .prox {
+    background-color: none;
+    border: none;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    width: 4rem;
+    align-self: end;
+    color: #db496e;
+    border-radius: 5px;
+  }
+  .end {
+    background-color: none;
+    border: none;
+    padding: 0.2rem 0.2rem 0.2rem 0.2rem;
+    width: 4rem;
+    align-self: start;
+    color: #db496e;
+    border-radius: 5px;
+  }
+
+  a {
+    color: rgb(241, 241, 241);
+  }
+`;
+
+// Estilização de Outros
+export const H1s = styled.h1`
+  align-self: center;
+`;
+
+
+
 
 export default ContainerS;
